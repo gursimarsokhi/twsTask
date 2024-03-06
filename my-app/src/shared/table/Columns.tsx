@@ -9,12 +9,10 @@ export const COLUMNS = [
   {
     Header: "Name",
     accessor: "name",
-    disableSortBy: false,
   },
   {
     Header: "Username",
     accessor: "username",
-    disableSortBy: true,
   },
   {
     Header: "Email",

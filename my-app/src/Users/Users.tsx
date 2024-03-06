@@ -6,8 +6,8 @@ import { log } from "console";
 
 const Users = () => {
     const [allData, saveAllData] = useState([]);
-    const [finalData, saveFinalData] = useState([]);
-
+    const [finalData, saveFinalData] = useState([{ id: 1, name: 'dummy', username: 'dummy', email: 'dummy', city: 'dummy' }]);
+    const [status, setStatus] = useState(200);
     useEffect(() => {
         const fetchData = async () => {
             try {
@@ -18,6 +18,7 @@ const Users = () => {
                 const response = await axios(config);
                 console.log(response.data, response);
                 saveAllData(response.data);
+                setStatus(response.status);
             } catch (error) {
                 console.log(error);
             }
@@ -25,12 +26,19 @@ const Users = () => {
         console.log("queryRes", allData);
 
         fetchData();
+
+
+
     }, []);
-    console.log(allData);
+
+
+    console.log(finalData);
     const renderRowSubComponent2 = React.useCallback(
         ({ row }: any) => <div>Hello</div>,
         []
     );
+
+
     let finalArray: any = [];
     allData.map((v: any, k: number) => {
         console.log("value 1", v);
@@ -46,6 +54,14 @@ const Users = () => {
     console.log("finalArray", finalArray);
     //saveFinalData(finalArray);
     console.log(finalData);
+
+    useEffect(() => {
+        if (status === 200) {
+            saveFinalData(finalArray)
+        }
+    }, [])
+    console.log("finalData", finalData);
+
 
     return (
         <div>
@@ -72,7 +88,7 @@ const Users = () => {
             </table> */}
             <TableReact
                 column_header={COLUMNS}
-                column_data={finalArray}
+                column_data={finalData}
                 table_header="LIST OF USERS"
                 search_bar={true}
             />

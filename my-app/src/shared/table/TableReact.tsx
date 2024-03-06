@@ -23,7 +23,9 @@ const TableReact = ({ column_header, table_header, column_data, search_bar, down
         headerGroups,
         state,
         setGlobalFilter,
-        rows,
+        page,
+        nextPage,
+        previousPage,
         prepareRow,
         visibleColumns,
     }: any = useTable<any>(
@@ -84,7 +86,7 @@ const TableReact = ({ column_header, table_header, column_data, search_bar, down
                             ))}
                         </thead>
                         <tbody {...getTableBodyProps()}>
-                            {rows.map((row: any, i: number) => {
+                            {page.map((row: any, i: number) => {
                                 prepareRow(row);
                                 return (
                                     <React.Fragment key={i}>
@@ -112,7 +114,10 @@ const TableReact = ({ column_header, table_header, column_data, search_bar, down
 
                 </Styles.Wrapper>
             </Styles.MainWrapper>
-
+            <div>
+                <button onClick={() => previousPage()}>Previous</button>
+                <button onClick={() => nextPage()}>Next</button>
+            </div>
         </div>
     )
 }

@@ -93,6 +93,10 @@ const Users = () => {
                 column_data={finalArray}
                 table_header="LIST OF USERS"
                 search_bar={true}
+                down_arrow={false}
+                dashboardtext={false}
+                dashboardrighttext={false}
+                renderRowSubComponent={renderRowSubComponent2}
             />
         </div>
     );

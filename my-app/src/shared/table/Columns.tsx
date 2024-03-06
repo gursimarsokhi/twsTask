@@ -23,8 +23,9 @@ export const COLUMNS = [
     Header: "City",
     accessor: "city",
     disableSortBy: true,
-  }, {
-    Header: "View",
+  },
+  {
+    Header: "",
     accessor: "button",
     disableSortBy: true,
     Cell: ({ row }: any) => (

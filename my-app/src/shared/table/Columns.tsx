@@ -9,7 +9,7 @@ export const COLUMNS = [
   {
     Header: "Name",
     accessor: "name",
-    // disableSortBy: true,
+    disableSortBy: false,
   },
   {
     Header: "Username",

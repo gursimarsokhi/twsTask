@@ -56,6 +56,8 @@ const Users = () => {
     console.log(finalData);
 
     useEffect(() => {
+        console.log("***", status);
+
         if (status === 200) {
             saveFinalData(finalArray)
         }
@@ -88,7 +90,7 @@ const Users = () => {
             </table> */}
             <TableReact
                 column_header={COLUMNS}
-                column_data={finalData}
+                column_data={finalArray}
                 table_header="LIST OF USERS"
                 search_bar={true}
             />

@@ -9,17 +9,14 @@ import {
     useRowSelect,
 } from "react-table";
 import Search from "../searchBar";
+import { log } from "console";
 const TableReact = ({ column_header, table_header, column_data, search_bar, down_arrow, dashboardtext, dashboardrighttext, renderRowSubComponent }: any) => {
-    const columns = useMemo(
-        () => column_header,
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        []
-    );
-    const data = useMemo(
-        () => column_data,
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        []
-    );
+    console.log("column_data11", column_data);
+
+
+
+    const columns = column_header;
+    const data = column_data;
     const {
         getTableProps,
         getTableBodyProps,

@@ -57,16 +57,7 @@ const TableReact = ({ column_header, table_header, column_data, search_bar, down
                                 {table_header}
                             </Styles.TableHeaderText>
                         </div>
-                        {dashboardrighttext ? (
-                            <div>
-                                <Styles.DashboardHeaderOption1>
-                                    TOTAL LIQUIDITY
-                                </Styles.DashboardHeaderOption1>
-                                <Styles.DashboardHeaderOption2>
-                                    $ 1245,256,8954,000.0
-                                </Styles.DashboardHeaderOption2>
-                            </div>
-                        ) : null}
+
 
                         {search_bar && (
                             <Search

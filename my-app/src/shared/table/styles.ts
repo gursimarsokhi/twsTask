@@ -82,7 +82,7 @@ export const TableHeaderWrapper = styled.div`
   padding: 0px 10px;
   @media only screen and (max-width: ${screenSizes.mediaXL}px) {
     display: block;
-    width: 100%;
+
     padding: 20px 11px;
   }
   @media only screen and (min-width: ${screenSizes.mediaXL}px) {
